@@ -1,0 +1,34 @@
+# Node dependencies
+node_modules/
+
+# Env variables
+.env
+.env.local
+.env.*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Runtime files
+dist/
+build/
+tmp/
+temp/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Uploaded images
+uploads/
+
+# Editor directories and files
+.vscode/
+.idea/
+
+# Optional: PM2 logs
+.pids
+logs/
