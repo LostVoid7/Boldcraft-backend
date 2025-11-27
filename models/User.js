@@ -1,23 +1,17 @@
-import { DataTypes, Model } from '@sequelize/core';
-import { sequelize } from './index.js';
+// models/User.js
+import mongoose from 'mongoose';
 
-export class User extends Model {}
-
-User.init({
-  id: {
-    type: DataTypes.BIGINT,
-    primaryKey: true,
-    autoIncrement: true
-  },
+const userSchema = new mongoose.Schema({
   email: {
-    type: DataTypes.STRING,
+    type: String
   },
   password_hash: {
-    type: DataTypes.STRING,
-    allowNull: false
+    type: String,
+    required: true
   }
 }, {
-  sequelize,
-  modelName: 'User',
-  tableName: 'users',
+  timestamps: true
 });
+
+export const User = mongoose.model('User', userSchema);
+

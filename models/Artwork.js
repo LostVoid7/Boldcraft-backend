@@ -1,31 +1,23 @@
-import { DataTypes, Model } from '@sequelize/core';
-import { sequelize } from './index.js';
+import mongoose from "mongoose";
 
-export class Artwork extends Model {}
-
-Artwork.init({
-  id: {
-    type: DataTypes.BIGINT,
-    primaryKey: true,
-    autoIncrement: true
-  },
+const artworkSchema = new mongoose.Schema({
   title: {
-    type: DataTypes.STRING,
-    allowNull: false
+    type: String,
+    required: true
   },
   description: {
-    type: DataTypes.TEXT,
+    type: String
   },
   category: {
-    type: DataTypes.ENUM('drawing', 'graphic-design'),
+    type: String,
+    enum: ['drawing', 'graphic-design']
   },
   image_url: {
-    type: DataTypes.STRING,
-    allowNull: false
+    type: String,
+    required: true
   }
 }, {
-  sequelize,
-  modelName: 'Artwork',
-  tableName: 'artworks',
-  underscored: true,
-});
+  timestamps: true  
+})
+
+export const Artwork = mongoose.model('Artwork', artworkSchema);

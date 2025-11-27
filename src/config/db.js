@@ -1,14 +1,13 @@
-import pg from 'pg';
+import mongoose from 'mongoose';
 
-const pool = new pg.Pool({
-  host: process.env.DB_HOST,
-  port: process.env.DB_PORT,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASS,
-  database: process.env.DB_NAME,
-  ssl: {
-    rejectUnauthorized: false
+const connectDB = async () => {
+  try {
+    await mongoose.connect(process.env.MONGO_URI);
+    console.log('MongoDB connected')
+  } catch (error) {
+    console.error('MondoDB connection error: ', error.message);
+    process.exit(1);
   }
-});
+}
 
-export default pool;
+export default connectDB;
