@@ -12,7 +12,7 @@ Image upload using Cloudinary
 
 Multer + streamifier for streaming uploads
 
-PostgreSQL database
+Mongodb database
 
 Secure admin-only routes
 
@@ -22,7 +22,7 @@ Tech Stack
 
 Node.js + Express
 
-PostgreSQL
+Mongodb/mongoose
 
 Cloudinary for image hosting
 
@@ -30,13 +30,13 @@ Multer for file handling
 
 JWT for authentication
 
-Render / Railway (if deployed)
+Deployed on Render
 
 Requirements
 
 Node.js (v18+)
 
-PostgreSQL database
+Mongodb
 
 Cloudinary account
 
@@ -54,7 +54,6 @@ git clone <repo-url>
 cd artwork-api
 npm install
 
-Run the database migrations (or manually create your tables).
 
 Start the server:
 
@@ -126,7 +125,7 @@ Cloudinary will work in production once keys are set.
 
 License
 
-MIT License (optional).
+MIT License
 
 Future Improvements
 
